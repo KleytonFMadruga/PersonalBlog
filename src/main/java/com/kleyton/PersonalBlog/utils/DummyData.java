@@ -36,6 +36,7 @@ public class DummyData {
 			Post postSaved = personalBlogRepository.save(post);
 			System.out.println("Id Post: " + postSaved.getId());
 		}
+		
 	}
 	
 		
