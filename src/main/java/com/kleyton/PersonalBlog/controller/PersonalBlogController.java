@@ -47,7 +47,8 @@ public class PersonalBlogController {
 	@RequestMapping(value = "/newPost", method = RequestMethod.POST)
 	public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes) {
 		if(result.hasErrors()) {
-			return "redirect:/newpost";
+			attributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatórios foram preenchidos!");
+			return "redirect:/newPost";
 		}
 		post.setData(LocalDate.now());
 		personalBlogService.save(post);
